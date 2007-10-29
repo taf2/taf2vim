@@ -157,4 +157,4 @@ set includeexpr+=substitute(v:fname,'s$','','g')
 iab xch <c-r>=strftime("%Y-%m-%d")<cr>
 
 let loaded_matchparen = 1
-color desert
+"color desert
