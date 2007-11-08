@@ -11,7 +11,7 @@ source <sfile>:p:h/c.vim
 
 " JavaScript extentions
 
-syn keyword jsStatement	new delete this friend using
+syn keyword jsStatement	new delete this friend using typeof instanceof 
 syn keyword jsAccess		function
 syn keyword jsType			var	
 syn keyword jsExceptions	throw try catch
