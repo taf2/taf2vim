@@ -17,7 +17,7 @@ set cpo-=C
 " Define some defaults in case the included ftplugins don't set them.
 let s:undo_ftplugin = ""
 let s:browsefilter = "Ruby Files (*.rb)\t*.rb\n" .
-		   \ "HTML Files (*.html, *.htm, *.erb)\t*.html;*.htm\n" .
+		   \ "HTML Files (*.html, *.htm, *.erb, *.reverb.erb, *.js.erb)\t*.html;*.htm\n" .
 		   \ "All Files (*.*)\t*.*\n"
 let s:match_words = ""
 

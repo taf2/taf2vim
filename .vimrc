@@ -102,6 +102,7 @@ au BufNewFile,BufRead *.idl so $HOME/.vim/idl.vim
 au BufNewFile,BufRead *.pt so $HOME/.vim/eruby.vim
 au BufNewFile,BufRead *.zcml so $HOME/.vim/eruby.vim
 au BufNewFile,BufRead *.rl so $HOME/.vim/ragel.vim
+au BufNewFile,BufRead Makefile so $HOME/.vim/make.vim
 "set viminfo='10,\"100,:20,%,nc:\\some\\place\\under\\Windoz\\_viminfo 
 " the following restores the position in a previously edited file
 set viminfo='10,\"100,:20,%,n~/.viminfo
