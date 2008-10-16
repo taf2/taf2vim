@@ -37,6 +37,7 @@ endif
 
 set nocp
 set ignorecase
+set smartcase
 "set redraw
 set report=1
 "set showmatch
@@ -103,6 +104,8 @@ au BufNewFile,BufRead *.pt so $HOME/.vim/eruby.vim
 au BufNewFile,BufRead *.zcml so $HOME/.vim/eruby.vim
 au BufNewFile,BufRead *.rl so $HOME/.vim/ragel.vim
 au BufNewFile,BufRead Makefile so $HOME/.vim/make.vim
+" nginx
+au BufNewFile,BufRead nginx.conf,nginx/conf.d/*.conf so $HOME/.vim/nginx.vim
 "set viminfo='10,\"100,:20,%,nc:\\some\\place\\under\\Windoz\\_viminfo 
 " the following restores the position in a previously edited file
 set viminfo='10,\"100,:20,%,n~/.viminfo
