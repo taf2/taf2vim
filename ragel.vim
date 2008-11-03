@@ -23,7 +23,7 @@ syntax match ocLiteral "\"\(\\.\|[^\"\\]\)*\""
 " C/C++ Keywords
 syntax keyword ocType unsigned signed void char short int long float double bool
 syntax keyword ocType inline static extern register const volatile auto
-syntax keyword ocType union enum struct class typedef
+syntax keyword ocType union enum struct class typedef virtual
 syntax keyword ocType namespace template typename mutable
 syntax keyword ocKeyword break continue default do else for
 syntax keyword ocKeyword goto if return switch while
@@ -98,7 +98,7 @@ syntax match rlOtherOps "<:" contained
 " Keywords
 " FIXME: Enable the range keyword post 5.17.
 " syntax keyword rlKeywords machine action context include range contained
-syntax keyword rlKeywords machine action context include import export contained
+syntax keyword rlKeywords machine action context include import export prepush postpop contained
 syntax keyword rlExprKeywords when inwhen outwhen err lerr eof from to contained
 
 " Case Labels

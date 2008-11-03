@@ -162,3 +162,13 @@ iab xch <c-r>=strftime("%Y-%m-%d")<cr>
 
 let loaded_matchparen = 1
 color desert
+
+" spell checking
+map <F6> <Esc>:setlocal spell spelllang=en_gb<CR>
+map <F7> <Esc>:setlocal nospell<CR>
+" ]s and [s to navigate
+" z= shows suggestions zg adds word to dictionary, zug performs an undo to the dictionary addition
+hi SpellBad term=reverse ctermfg=white ctermbg=darkred guifg=#ffffff guibg=#7f0000 gui=underline
+hi SpellCap guifg=#ffffff guibg=#7f007f
+hi SpellRare guifg=#ffffff guibg=#00007f gui=underline
+hi SpellLocal term=reverse ctermfg=black ctermbg=darkgreen guifg=#ffffff guibg=#7f0000 gui=underline
