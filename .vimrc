@@ -89,6 +89,7 @@ highlight constant ctermfg=7
 "au BufNewFile,BufRead *.m4 so $HOME/.vim/matlab.vim
 "au BufNewFile,BufRead *.tex so $HOME/.vim/tex.vim
 au BufNewFile,BufRead *.c so $HOME/.vim/c.vim
+au BufNewFile,BufRead *.m so $HOME/.vim/objc.vim
 au BufNewFile,BufRead *.cc so $HOME/.vim/cpp.vim
 au BufNewFile,BufRead *.template so $HOME/.vim/cpp.vim
 au BufNewFile,BufRead *.cpp so $HOME/.vim/cpp.vim
@@ -117,7 +118,7 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
 "   For other files switch it off
 "   Don't change the sequence, it's important that the line with * comes first.
 autocmd BufRead * set formatoptions=tcql nocindent comments&
-autocmd BufRead *.c,*.h,*.cc,*.cpp,*.template set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
+autocmd BufRead *.c,*.h,*.cc,*.cpp,*.template,*.m set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
 autocmd BufRead *.rb,*.rake,Rakefile set filetype=ruby
 autocmd BufRead *.manifest set filetype=javascript
 
@@ -151,6 +152,7 @@ map <C-m> :tabclose<cr>
 map <C-l> :tabnext<cr>
 map <C-h> :tabprevious<cr>
 map <C-o> :tabonly<cr>
+"make it so can open files in a new tab
 map gF :sp<CR>gf
 
 "set path+=/home/taf2/project/portal-unified
@@ -162,6 +164,7 @@ iab xch <c-r>=strftime("%Y-%m-%d")<cr>
 
 let loaded_matchparen = 1
 color desert
+" set term ansi
 
 " spell checking
 map <F6> <Esc>:setlocal spell spelllang=en_gb<CR>
@@ -172,3 +175,19 @@ hi SpellBad term=reverse ctermfg=white ctermbg=darkred guifg=#ffffff guibg=#7f00
 hi SpellCap guifg=#ffffff guibg=#7f007f
 hi SpellRare guifg=#ffffff guibg=#00007f gui=underline
 hi SpellLocal term=reverse ctermfg=black ctermbg=darkgreen guifg=#ffffff guibg=#7f0000 gui=underline
+
+
+" Edit another file in the same directory as the current file
+" uses expression to extract path from current file's path 
+" (thanks Douglas Potts)
+if has("unix")
+  map ,e :e <C-R>=expand("%:p:h") . '/'<CR>
+else
+  map ,e :e <C-R>=expand("%:p:h") . '\'<CR>
+endif
+
+if has("unix")
+  cmap %/ <C-R>=expand("%:p:h") . '/'<CR>
+else
+  cmap %/ <C-R>=expand("%:p:h") . '\'<CR>
+endif

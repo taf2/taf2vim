@@ -21,7 +21,7 @@ syntax match ocLiteral "'\(\\.\|[^'\\]\)*'"
 syntax match ocLiteral "\"\(\\.\|[^\"\\]\)*\""
 
 " C/C++ Keywords
-syntax keyword ocType unsigned signed void char short int long float double bool
+syntax keyword ocType unsigned signed void char short int long float double bool size_t
 syntax keyword ocType inline static extern register const volatile auto
 syntax keyword ocType union enum struct class typedef virtual
 syntax keyword ocType namespace template typename mutable
