@@ -96,6 +96,7 @@ au BufNewFile,BufRead *.cpp so $HOME/.vim/cpp.vim
 au BufNewFile,BufRead *.h so $HOME/.vim/cpp.vim
 au BufNewFile,BufRead *.hh so $HOME/.vim/cpp.vim
 au BufNewFile,BufRead *.js so $HOME/.vim/js.vim
+au BufNewFile,BufRead *.as so $HOME/.vim/js.vim
 au BufNewFile,BufRead *.htc so $HOME/.vim/js.vim
 au BufNewFile,BufRead *.idl so $HOME/.vim/idl.vim
 "au BufNewFile,BufRead *.rhtml so $HOME/.vim/eruby.vim
