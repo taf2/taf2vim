@@ -96,9 +96,11 @@ au BufNewFile,BufRead *.cpp so $HOME/.vim/cpp.vim
 au BufNewFile,BufRead *.h so $HOME/.vim/cpp.vim
 au BufNewFile,BufRead *.hh so $HOME/.vim/cpp.vim
 au BufNewFile,BufRead *.js so $HOME/.vim/js.vim
+au BufNewFile,BufRead *.gjs so $HOME/.vim/js.vim
 au BufNewFile,BufRead *.as so $HOME/.vim/js.vim
 au BufNewFile,BufRead *.htc so $HOME/.vim/js.vim
 au BufNewFile,BufRead *.idl so $HOME/.vim/idl.vim
+au BufNewFile,BufRead *.html so $HOME/.vim/html.vim
 "au BufNewFile,BufRead *.rhtml so $HOME/.vim/eruby.vim
 "au BufNewFile,BufRead *.erb so $HOME/.vim/eruby.vim
 "au BufNewFile,BufRead *.html.erb so $HOME/.vim/eruby.vim
@@ -121,7 +123,8 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
 autocmd BufRead * set formatoptions=tcql nocindent comments&
 autocmd BufRead *.c,*.h,*.cc,*.cpp,*.template,*.m set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
 autocmd BufRead *.rb,*.rake,Rakefile set filetype=ruby
-autocmd BufRead *.manifest set filetype=javascript
+autocmd BufRead *.js.erb,*.js set filetype=javascript
+autocmd BufRead wscript set filetype=python
 
 " Enable editing of gzipped files
 "    read: set binary mode before reading the file
@@ -148,11 +151,12 @@ set shell=/bin/bash " Use the bash shell
 " set shellpipe=2>&1| tee
 " set shellredir=>%s 2>&1
 
-map <C-n> :tabnew<cr>
-map <C-m> :tabclose<cr>
-map <C-l> :tabnext<cr>
-map <C-h> :tabprevious<cr>
-map <C-o> :tabonly<cr>
+"map <C-i> <C-l>
+"map <C-n> :tabnew<cr>
+"map <C-m> :tabclose<cr>
+"map <C-l> :tabnext<cr>
+"map <C-h> :tabprevious<cr>
+"map <C-o> :tabonly<cr>
 "make it so can open files in a new tab
 map gF :sp<CR>gf
 
