@@ -101,6 +101,7 @@ au BufNewFile,BufRead *.as so $HOME/.vim/js.vim
 au BufNewFile,BufRead *.htc so $HOME/.vim/js.vim
 au BufNewFile,BufRead *.idl so $HOME/.vim/idl.vim
 au BufNewFile,BufRead *.html so $HOME/.vim/html.vim
+au BufNewFile,BufRead *.ejs set filetype=js.html
 "au BufNewFile,BufRead *.rhtml so $HOME/.vim/eruby.vim
 "au BufNewFile,BufRead *.erb so $HOME/.vim/eruby.vim
 "au BufNewFile,BufRead *.html.erb so $HOME/.vim/eruby.vim
@@ -122,7 +123,7 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
 "   Don't change the sequence, it's important that the line with * comes first.
 autocmd BufRead * set formatoptions=tcql nocindent comments&
 autocmd BufRead *.c,*.h,*.cc,*.cpp,*.template,*.m set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
-autocmd BufRead *.rb,*.rake,Rakefile set filetype=ruby
+autocmd BufRead *.rb,*.rake,Rakefile,Gemfile set filetype=ruby
 autocmd BufRead *.js.erb,*.js set filetype=javascript
 autocmd BufRead wscript set filetype=python
 
@@ -143,11 +144,13 @@ autocmd FileAppendPre               *.gz !mv <afile>:r <afile>
 autocmd FileAppendPost              *.gz !mv <afile> <afile>:r
 autocmd FileAppendPost              *.gz !gzip <afile>:r
 
-set shellcmdflag=-c
-set shellquote=
-set shellslash          " Use the forward slash for expansion.
-set shellxquote="
-set shell=/bin/bash " Use the bash shell
+"set shellcmdflag=--rcfile\ -c
+"set shellcmdflag=-c
+"set shellxquote=\"
+"set shellquote=
+"set shellslash          " Use the forward slash for expansion.
+"set shellxquote="
+"set shell=/bin/bash " Use the bash shell
 " set shellpipe=2>&1| tee
 " set shellredir=>%s 2>&1
 
@@ -196,3 +199,6 @@ if has("unix")
 else
   cmap %/ <C-R>=expand("%:p:h") . '\'<CR>
 endif
+
+" :source ~/.vim/rvm.vim
+" set statusline+=%{rvm#statusline()}
